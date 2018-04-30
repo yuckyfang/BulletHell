@@ -11,8 +11,13 @@ public abstract class Bullet
 				//only have radius and center.Everything else will be image coords {x1,y1,x2,y2}
 	public Bullet(int x, int y, double speed, double damage, double angle, boolean isBHole, String imageName,int[] hitBox)
 	{
-		bSpeed=speed;bDamage=damage;aod=angle; bHole=isBHole; imgName=imageName; 
-		hBox=hitBox;
+		if(!bHole)
+		{bSpeed=speed;bDamage=damage;aod=angle; bHole=isBHole; imgName=imageName; 
+		hBox=hitBox;}
+		else
+		{
+			bSpeed=speed;bDamage=damage;aod=angle; bHole=isBHole; imgName=imageName;
+		}
 	}
 	public void Move(int xShift, int yShift)
 	{
